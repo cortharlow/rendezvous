@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'landings#index'
   resources :users
+  resources :itineraries
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

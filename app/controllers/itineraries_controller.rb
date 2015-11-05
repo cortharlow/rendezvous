@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class ItinerariesController < ApplicationController
   def index
   end
 
@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
+    user = Itinerary.new(itinerary_params)
 
     if user.save
       redirect_to('/users/show')
@@ -17,8 +17,8 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(
+  def itinerary_params
+    params.require(:itinerary).permit(
       :name,
       :email,
       :city,
