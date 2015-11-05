@@ -1,1 +1,14 @@
-<h1>Itinerary List</h1>
+<h1>Public Itinerary List</h1>
+<%= link_to "Create Rendezvous", new_itinerary_path %>
+<%= link_to "#{current_user.name}", "users/#{current_user.id}" %>
+
+<% @itineraries.each do |itinerary| %>
+<% if itinerary.public %>
+  <div class="itinerary_list" style="border:1px solid black;">
+    <h4><%= itinerary.name %><h4>
+    <img src='<%= itinerary.photo_url %>'>
+    <p><b><%= itinerary.start_date %> to <%= itinerary.end_date %></b></p>
+    <p><%= itinerary.description %></p>
+  </div>
+  <% end %>
+<% end %>

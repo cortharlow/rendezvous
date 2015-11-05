@@ -1,0 +1,11 @@
+<h2>Edit Itinerary</h2>
+
+<%= form_for @itinerary do |f| %>
+  Name: <%= f.text_field :name %><br>
+  Photo URL: <%= f.text_field :photo_url %><br>
+  Start Date: <%= f.text_field :start_date %><br>
+  End Date: <%= f.text_field :end_date %><br>
+  Description of Trip: <%= f.text_area :description %><br>
+  Make itinerary public?: <%= f.check_box :public %><br>
+  <%= f.submit "Edit" %>
+<% end %>

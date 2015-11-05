@@ -1,0 +1,13 @@
+<h1>Step 1: Itinerary Information</h1>
+
+<%= form_for :itinerary, url: itineraries_path do |f| %>
+  Name: <%= f.text_field :name %><br>
+  Photo URL: <%= f.text_field :photo_url %><br>
+  Start Date: <%= f.text_field :start_date %><br>
+  End Date: <%= f.text_field :end_date %><br>
+  Description of Trip: <%= f.text_area :description %><br>
+  Make itinerary public?: <%= f.check_box :public %><br>
+  <%= f.submit "Create Itinerary" %>
+<% end %>
+
+<h4>Next we'll add your Destinations.</h4>

@@ -1,0 +1,21 @@
+<%= form_for @user do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error">
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="user_form">
+    Name: <%= f.text_field :name %><br>
+    Photo URL: <%= f.text_field :photo_url %><br>
+    City: <%= f.text_field :city %><br>
+    Email: <%= f.text_field :email %><br>
+    Password: <%= f.password_field :password %><br>
+    Password Confirmation: <%= f.password_field :password_confirmation %><br>
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
