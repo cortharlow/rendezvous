@@ -10,12 +10,11 @@
 
 <h2>My Rendezvous</h2>
 <% @user.itineraries.each do |itinerary| %>
-    <div class="itinerary_list" style="border:1px solid black;">
-      <h4><%= itinerary.name %><h4>
-        <img src="<%= itinerary.photo_url %>">
+  <div class="itinerary_list" style="border:1px solid black;">
+    <h4><%= itinerary.name %><h4>
+      <img src="<%= itinerary.photo_url %>">
         <p><b><%= itinerary.start_date %> to <%= itinerary.end_date %></b></p>
         <p><%= itinerary.description %></p>
         <p><%= link_to "Edit", edit_itinerary_path(itinerary) %> | <%= link_to "Destroy", itinerary_path(itinerary), method: :delete, data: {confirm: "Are you sure?"} %>
-      </div>
-
-  <% end %>
+  </div>
+<% end %>

@@ -25,7 +25,7 @@ class ItinerariesController < ApplicationController
     if @itinerary.save
       redirect_to @itinerary
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -35,15 +35,16 @@ class ItinerariesController < ApplicationController
     if @itinerary.update(itinerary_params)
       redirect_to @itinerary
     else
-      render 'edit'
+      render "edit"
     end
   end
 
   def destroy
     @itinerary = Itinerary.find(params[:id])
+    redirect_to @itinerary.user
     @itinerary.destroy #Set to nil for sessions, not objects
 
-    redirect_to ('/users/id')
+
   end
 
   private
