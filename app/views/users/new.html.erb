@@ -1,0 +1,11 @@
+<h1>Join Rendezvous</h1>
+
+<%= form_for :user, url: "/users" do |f| %>
+  Name: <%= f.text_field :name %><br>
+  Photo URL: <%= f.text_field :photo_url %><br>
+  City: <%= f.text_field :city %><br>
+  Email: <%= f.text_field :email %><br>
+  Password: <%= f.password_field :password %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %><br>
+  <%= f.submit "Join Now" %>
+<% end %>
