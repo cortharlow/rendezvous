@@ -1,0 +1,9 @@
+<h2>Edit Destination</h2>
+
+<%= form_for :destination, url: itinerary_destination_path do |f| %>
+  Where are you traveling?<br>
+  City: <%= f.text_field :city %><br>
+  Country: <%= f.text_field :country %><br>
+  Number of Days: <%= f.text_field :num_of_days %><br>
+  <%= f.submit "Edit Destination" %>
+<% end %>

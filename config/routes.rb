@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'landings#index'
   resources :users
-  resources :itineraries
+  resources :itineraries do
+    resources :destinations
+  end
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

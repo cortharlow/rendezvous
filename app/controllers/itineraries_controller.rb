@@ -23,7 +23,7 @@ class ItinerariesController < ApplicationController
     @itinerary.user_id = current_user.id
 
     if @itinerary.save
-      redirect_to @itinerary
+      redirect_to new_itinerary_destination_path(@itinerary)
     else
       render "new"
     end
@@ -33,7 +33,7 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
 
     if @itinerary.update(itinerary_params)
-      redirect_to @itinerary
+      redirect_to @itinerary.user
     else
       render "edit"
     end
