@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  
   before_filter :authorize
 
   def index
@@ -10,7 +11,7 @@ class ActivitiesController < ApplicationController
   end
 
   def edit
-    @activity = activity.find(params[:id])
+    @activity = Activity.find(params[:id])
   end
 
   def create

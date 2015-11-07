@@ -1,12 +1,3 @@
-<h2>Add first activity</h2>
+<h2>Add Activity</h2>
 
-<%= form_for :activity, url: new_destination_activity_path do |f| %>
-  Lets add an activity!<br>
-  Which day in <% activity.destination.city %> is this activity? <%= f.text_field :day_num %><br>
-  Name of Activity: <%= f.text_field :name %><br>
-  Location: <%= f.text_field :location %><br>
-  Cost: <%= f.text_field :cost %><br>
-  Photo URL: <%= f.text_field :photo_url %><br>
-  Notes: <%= f.text_area :notes %><br>
-  <%= f.submit "Create Activity" %>
-<% end %>
+<%= render "form" %>

@@ -1,7 +1,7 @@
 <%= link_to "Rendezvous (Home)", itineraries_path %> | <%= link_to "#{current_user.name}", current_user %>
 
 <div>
-  <h4><%= @itinerary.name %></h4>
+  <h2><%= @itinerary.name %></h2>
   <img src='<%= @itinerary.photo_url %>'>
   <p><b><%= @itinerary.start_date %> to <%= @itinerary.end_date %></b></p>
   <p><%= @itinerary.description %></p>
@@ -15,7 +15,25 @@
       <% end %>
       <% (1..destination.num_of_days).each do |day| %>
         <div style="border:solid 1px blue">
-          <h4>Day <%= "#{day}" %></h4>
+          <h3>Day <%= "#{day}" %></h3>
+          <% destination.activities.each do |activity| %>
+            <% if activity.day_num == day %>
+            <div style="border:solid 2px green">
+              <h4><%= activity.name %></h4>
+              <% if activity.photo_url != "" %>
+                <img src='<%= "#{activity.photo_url}" %>'>
+              <% end %>
+                <p><b> <%= activity.location %> | <%= activity.cost %> </b></p>
+                <p><%= activity.notes %></p>
+                <% if activity.destination.itinerary.user_id == current_user.id %>
+                  <%= link_to "Edit", edit_activity_path(activity) %> | <%= link_to "Delete", activity_path(activity), method: :delete, data: {confirm: "Are you sure?"} %>
+                <% end %>
+            </div>
+            <% end %>
+          <% end %>
+          <% if destination.itinerary.user_id == current_user.id %>
+            <%= link_to "Add Activity", new_destination_activity_path(destination, :day_num => day) %>
+          <% end %>
         </div>
       <% end %>
     </div>
