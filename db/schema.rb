@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107173920) do
+ActiveRecord::Schema.define(version: 20151107215613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,26 @@ ActiveRecord::Schema.define(version: 20151107173920) do
     t.string   "city"
     t.string   "country"
     t.integer  "num_of_days"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "details", force: :cascade do |t|
+    t.integer  "destination_id"
+    t.string   "accommodation_name"
+    t.string   "accommodation_address"
+    t.string   "accommodation_checkin"
+    t.string   "accommodation_checkout"
+    t.string   "accommodation_cost"
+    t.text     "accommodation_notes"
+    t.string   "user_name"
+    t.string   "transportation_type"
+    t.string   "transportation_company_number"
+    t.string   "transportation_departure_location"
+    t.string   "transportation_departure_datetime"
+    t.string   "transportation_arrival_location"
+    t.string   "transportation_arrival_datetime"
+    t.string   "transportation_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

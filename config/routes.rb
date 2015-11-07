@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :itineraries do
     resources :destinations, shallow: true do
       resources :activities
+      resources :details
     end
   end
 
