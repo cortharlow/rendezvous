@@ -11,7 +11,7 @@
     <div style="border:1px solid red">
       <h3><%= destination.num_of_days %> Days in <%= destination.city %></h3>
       <% if @itinerary.user_id == current_user.id %>
-        <%= link_to "Edit Destination", edit_itinerary_destination_path(@itinerary, destination) %> | <%= link_to "Delete Destination", itinerary_destination_path(@itinerary, destination), method: :delete, data: {confirm: "Are you sure?"} %>
+        <%= link_to "Edit Destination", edit_destination_path(destination) %> | <%= link_to "Delete Destination", destination_path(destination), method: :delete, data: {confirm: "Are you sure?"} %>
       <% end %>
       <% (1..destination.num_of_days).each do |day| %>
         <div style="border:solid 1px blue">
