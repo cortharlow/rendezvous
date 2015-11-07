@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   root 'landings#index'
   resources :users
   resources :itineraries do
-    resources :destinations
+    resources :destinations do
+      resources :activities, shallow: true
+    end
   end
+
+  resources :activities
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

@@ -1,7 +1,6 @@
 <h2>Step 2: Your First Destination</h2>
 
 <%= form_for :destination, url: itinerary_destinations_path do |f| %>
-  <%= f.hidden_field :itinerary_id %>
   Where are you traveling?<br>
   City: <%= f.text_field :city %><br>
   Country: <%= f.text_field :country %><br>
