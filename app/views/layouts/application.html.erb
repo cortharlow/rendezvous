@@ -6,19 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag "style.css" %>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
 <body>
-
-<!--
-  <div style=“text-align: center; padding-bottom: 20px;”>
-      <div style=“display: inline;”>
-	<% if current_user %>
-	  Signed in as <%= current_user.name %> | <%= link_to "Logout", "/logout" %>
-	<% else %>
-	  <%= link_to "Login", "/login" %>
-	<% end %>
-      </div>
--->
 
 <%= yield %>
 
