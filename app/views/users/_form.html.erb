@@ -1,5 +1,5 @@
 <div id="user-form">
-  <%= form_for @user, :html => {:class => "pure-form pure-form-aligned"} do |f| %>
+  <%= form_for @user do |f| %>
 
     <% if @user.errors.any? %>
       <div id="error">
