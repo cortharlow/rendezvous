@@ -12,6 +12,8 @@ class ItinerariesController < ApplicationController
 
   def show
     @itinerary = Itinerary.find(params[:id])
+    @comment = Comment.new
+    @comment.itinerary_id = @itinerary_id
   end
 
   def edit

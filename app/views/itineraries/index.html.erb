@@ -9,7 +9,8 @@
     <img src='<%= itinerary.photo_url %>'>
     <p><b><%= itinerary.start_date %> to <%= itinerary.end_date %></b></p>
     <p><%= itinerary.description %></p>
-    <p>Created by: <%= itinerary.user.name %>
+    <p>Created by: <%= itinerary.user.name %></p>
+    <p>Comments (<%= itinerary.comments.size %>)</p>
   </div>
   <% end %>
 <% end %>

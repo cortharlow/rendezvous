@@ -83,3 +83,9 @@
 <%if @itinerary.user_id == current_user.id %>
   <%= link_to "Add Destination", new_itinerary_destination_path(@itinerary) %>
 <% end %>
+
+<div>
+  <h3>Comments</h3>
+  <%= render partial: 'itineraries/comment', collection: @itinerary.comments %>
+  <%= render partial: 'comments/form' %>
+</div>
