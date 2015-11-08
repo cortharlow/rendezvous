@@ -22,17 +22,16 @@
 
   <div style="border:5px solid orange">
     <div style="border:3px solid purple">
-      <h4>Accommodation Info</h4>
-        <h5><%= detail.accommodation_name %> | <%= detail.accommodation_address %> | <%= detail.accommodation_cost %></h5>
+      <h4>Accommodation</h4>
+        <h4><%= detail.accommodation_name %> | <%= detail.accommodation_address %> | <%= detail.accommodation_cost %></h4>
           <p>Checkin: <%= detail.accommodation_checkin %> | Checkout: <%= detail.accommodation_checkout %>
           <br><%= detail.accommodation_notes %></p>
     </div>
 
     <div style="border:3px solid purple">
-      <h4>Transportation Info </h4>
+      <h4>Getting There</h4>
       <h4><%=  detail.transportation_company_number%> <%= detail.transportation_type %> | <%= detail.transportation_cost %> </h4>
-        <p>Departing <%= detail.transportation_departure_location %> at <%= detail.transportation_departure_datetime %>
-        <br>Arriving <%= detail.transportation_arrival_location %> at <%= detail.transportation_arrival_datetime %>
+        <p>Departing <%= detail.transportation_departure_location %> at <%= detail.transportation_departure_datetime %> –– Arriving <%= detail.transportation_arrival_location %> at <%= detail.transportation_arrival_datetime %>
         </p>
     </div>
 
@@ -58,8 +57,9 @@
           <img src='<%= "#{activity.photo_url}" %>'>
         <% end %>
 
-          <p><b> <%= activity.location %> | <%= activity.cost %> </b></p>
-          <p><%= activity.notes %></p>
+          <p><b>Location:</b> <%= activity.location %>
+          <br><b>Cost:</b> <%= activity.cost %></p>
+          <p><b>Notes:</b> <%= activity.notes %></p>
 
         <% if activity.destination.itinerary.user_id == current_user.id %>
           <%= link_to "Edit", edit_activity_path(activity) %> | <%= link_to "Delete", activity_path(activity), method: :delete, data: {confirm: "Are you sure?"} %>
@@ -72,7 +72,7 @@
 
     <% if destination.itinerary.user_id == current_user.id %>
       <%= link_to "Add Activity", new_destination_activity_path(destination, :day_num => day) %>
-      <% end %>
+    <% end %>
 
   </div>
   <% end %>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'landings#index'
+  
   resources :users
   resources :itineraries do
     resources :destinations, shallow: true do
