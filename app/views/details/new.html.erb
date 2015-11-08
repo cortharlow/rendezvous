@@ -1,0 +1,23 @@
+<h2>Travel Details</h2>
+<h3>Let's add some more information on your accommodations and travel plans.</h3>
+
+<%= form_for :detail, url: destination_details_path do |f| %>
+  <h4>Accommodation Information</h4>
+  Name of Accommodation: <%= f.text_field :accommodation_name %><br>
+  Address: <%= f.text_field :accommodation_address %><br>
+  Checkin Date and Time: <%= f.text_field :accommodation_checkin %><br>
+  Checkout Date and Time: <%= f.text_field :accommodation_checkout %><br>
+  Cost: <%= f.text_field :accommodation_cost %><br>
+  Notes: <%= f.text_area :accommodation_notes %><br>
+
+  <h4>Transportation Information</h4>
+  Name on Ticket: <%= f.text_field :user_name %><br>
+  Transportation Type: <%= f.text_field :transportation_type %><br>
+  Airline/Railline Flight/Train number: <%= f.text_field :transportation_company_number %><br>
+  Departure Location (Airport/Station): <%= f.text_field :transportation_departure_location %><br>
+  Departure Date and Time: <%= f.text_field :transportation_departure_datetime %><br>
+  Arrival Location (Airport/Station): <%= f.text_field :transportation_arrival_location %><br>
+  Arrival Date and Time: <%= f.text_field :transportation_arrival_datetime %><br>
+  Cost: <%= f.text_field :transportation_cost %><br>
+  <%= f.submit "Submit Details" %>
+<% end %>

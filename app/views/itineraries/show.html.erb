@@ -8,35 +8,76 @@
 </div>
 
 <% @itinerary.destinations.each do |destination| %>
-    <div style="border:1px solid red">
-      <h3><%= destination.num_of_days %> Days in <%= destination.city %></h3>
-      <% if @itinerary.user_id == current_user.id %>
-        <%= link_to "Edit Destination", edit_destination_path(destination) %> | <%= link_to "Delete Destination", destination_path(destination), method: :delete, data: {confirm: "Are you sure?"} %>
-      <% end %>
-      <% (1..destination.num_of_days).each do |day| %>
-        <div style="border:solid 1px blue">
-          <h3>Day <%= "#{day}" %></h3>
-          <% destination.activities.each do |activity| %>
-            <% if activity.day_num == day %>
-            <div style="border:solid 2px green">
-              <h4><%= activity.name %></h4>
-              <% if activity.photo_url != "" %>
-                <img src='<%= "#{activity.photo_url}" %>'>
-              <% end %>
-                <p><b> <%= activity.location %> | <%= activity.cost %> </b></p>
-                <p><%= activity.notes %></p>
-                <% if activity.destination.itinerary.user_id == current_user.id %>
-                  <%= link_to "Edit", edit_activity_path(activity) %> | <%= link_to "Delete", activity_path(activity), method: :delete, data: {confirm: "Are you sure?"} %>
-                <% end %>
-            </div>
-            <% end %>
-          <% end %>
-          <% if destination.itinerary.user_id == current_user.id %>
-            <%= link_to "Add Activity", new_destination_activity_path(destination, :day_num => day) %>
-          <% end %>
-        </div>
-      <% end %>
+<div style="border:1px solid red">
+  <h3><%= destination.num_of_days %> Days in <%= destination.city %></h3>
+
+  <% if @itinerary.user_id == current_user.id %>
+    <%= link_to "Edit Destination", edit_destination_path(destination) %> | <%= link_to "Delete Destination", destination_path(destination), method: :delete, data: {confirm: "Are you sure?"} %><br>
+  <% end %>
+
+  <% if destination.details == [] && @itinerary.user_id == current_user.id %>
+    <%= link_to "Add Accommodation and Travel Information", new_destination_detail_path(destination) %>
+  <% else %>
+    <% destination.details.each do |detail| %>
+
+  <div style="border:5px solid orange">
+    <div style="border:3px solid purple">
+      <h4>Accommodation Info</h4>
+        <h5><%= detail.accommodation_name %> | <%= detail.accommodation_address %> | <%= detail.accommodation_cost %></h5>
+          <p>Checkin: <%= detail.accommodation_checkin %> | Checkout: <%= detail.accommodation_checkout %>
+          <br><%= detail.accommodation_notes %></p>
     </div>
+
+    <div style="border:3px solid purple">
+      <h4>Transportation Info </h4>
+      <h4><%=  detail.transportation_company_number%> <%= detail.transportation_type %> | <%= detail.transportation_cost %> </h4>
+        <p>Departing <%= detail.transportation_departure_location %> at <%= detail.transportation_departure_datetime %>
+        <br>Arriving <%= detail.transportation_arrival_location %> at <%= detail.transportation_arrival_datetime %>
+        </p>
+    </div>
+
+    <% if @itinerary.user_id == current_user.id %>
+      <%= link_to "Edit Information", edit_detail_path(detail) %> | <%= link_to "Delete", detail_path(detail), method: :delete, data: {confirm: "Are you sure?"} %>
+    <% end %>
+
+  </div>
+    <% end %>
+  <% end %>
+
+  <% (1..destination.num_of_days).each do |day| %>
+  <div style="border:solid 1px blue">
+    <h3>Day <%= "#{day}" %></h3>
+
+    <% destination.activities.each do |activity| %>
+
+      <% if activity.day_num == day %>
+      <div style="border:solid 2px green">
+        <h4><%= activity.name %></h4>
+
+        <% if activity.photo_url != "" %>
+          <img src='<%= "#{activity.photo_url}" %>'>
+        <% end %>
+
+          <p><b> <%= activity.location %> | <%= activity.cost %> </b></p>
+          <p><%= activity.notes %></p>
+
+        <% if activity.destination.itinerary.user_id == current_user.id %>
+          <%= link_to "Edit", edit_activity_path(activity) %> | <%= link_to "Delete", activity_path(activity), method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
+
+      </div>
+      <% end %>
+
+    <% end %>
+
+    <% if destination.itinerary.user_id == current_user.id %>
+      <%= link_to "Add Activity", new_destination_activity_path(destination, :day_num => day) %>
+      <% end %>
+
+  </div>
+  <% end %>
+
+</div>
 <% end %>
 
 <%if @itinerary.user_id == current_user.id %>

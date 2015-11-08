@@ -8,7 +8,6 @@ class CreateDetails < ActiveRecord::Migration
       t.string :accommodation_checkout
       t.string :accommodation_cost
       t.text :accommodation_notes
-
       t.string :user_name
       t.string :transportation_type
       t.string :transportation_company_number

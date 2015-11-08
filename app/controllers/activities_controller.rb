@@ -1,12 +1,8 @@
 class ActivitiesController < ApplicationController
-  
+
   before_filter :authorize
 
-  def index
-    @activities = Activity.all
-  end
-
-  def new
+  def new    
     @activity = Activity.new
   end
 
@@ -45,13 +41,13 @@ class ActivitiesController < ApplicationController
 
   def activity_params
     params.require(:activity).permit(
-      :destination_id,
-      :day_num,
-      :name,
-      :location,
-      :cost,
-      :photo_url,
-      :notes
+    :destination_id,
+    :day_num,
+    :name,
+    :location,
+    :cost,
+    :photo_url,
+    :notes
     )
   end
 end

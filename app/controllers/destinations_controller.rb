@@ -19,7 +19,7 @@ class DestinationsController < ApplicationController
     @destination.itinerary_id = params[:itinerary_id]
 
     if @destination.save
-      redirect_to @destination.itinerary #Will direct to Detail
+      redirect_to @destination.itinerary
     else
       render "new"
     end
