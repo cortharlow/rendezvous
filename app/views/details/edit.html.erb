@@ -1,23 +1,42 @@
-<h2>Edit Travel Details</h2>
-<h3>Change your accommodation and travel plan information.</h3>
+<%= stylesheet_link_tag "style.css" %>
 
-<%= form_for @detail do |f| %>
-  <h4>Accommodation Information</h4>
-  Name of Accommodation: <%= f.text_field :accommodation_name %><br>
-  Address: <%= f.text_field :accommodation_address %><br>
-  Checkin Date and Time: <%= f.text_field :accommodation_checkin %><br>
-  Checkout Date and Time: <%= f.text_field :accommodation_checkout %><br>
-  Cost: <%= f.text_field :accommodation_cost %><br>
-  Notes: <%= f.text_area :accommodation_notes %><br>
+<div id="nav-bar">
+  <div id="home">
+    <ul>
+      <li><%= link_to "R", itineraries_path %></li>
+    </ul>
+  </div>
+  <div id="nav-basic">
+    <ul>
+      <li><%= link_to "#{current_user.name}\'s Profile", user_path(current_user.id) %></li>
+      <li><%= link_to "Create New", new_itinerary_path %></li>
+    </ul>
+  </div>
+</div>
 
-  <h4>Transportation Information</h4>
-  Name on Ticket: <%= f.text_field :user_name %><br>
-  Transportation Type: <%= f.text_field :transportation_type %><br>
-  Airline/Railline Flight/Train number: <%= f.text_field :transportation_company_number %><br>
-  Departure Location (Airport/Station): <%= f.text_field :transportation_departure_location %><br>
-  Departure Date and Time: <%= f.text_field :transportation_departure_datetime %><br>
-  Arrival Location (Airport/Station): <%= f.text_field :transportation_arrival_location %><br>
-  Arrival Date and Time: <%= f.text_field :transportation_arrival_datetime %><br>
-  Cost: <%= f.text_field :transportation_cost %><br>
-  <%= f.submit "Submit Details" %>
-<% end %>
+<div id="detail-wrap">
+  <div id="user-container" style="margin-top:10px;">
+    <div id="user-new">Edit Travel Details</div>
+    <div id="video-caption" style="margin-top:-10px;margin-bottom:20px;">Change accommodation and transportation info:</div>
+    <div id="user-form">
+      <%= form_for @detail do |f| %>
+        <h4>Accommodation Information</h4>
+        <%= f.text_field :accommodation_name, :class => "form-field", :placeholder => "Accommodation Name", :style => "color:black;" %><br>
+        <%= f.text_field :accommodation_address, :class => "form-field", :placeholder => "Address", :style => "color:black;" %><br>
+        <%= f.text_field :accommodation_checkin, :class => "form-field", :placeholder => "Checkin Date & Time", :style => "color:black;" %><br>
+        <%= f.text_field :accommodation_checkout, :class => "form-field", :placeholder => "Checkout Date & Time", :style => "color:black;" %><br>
+        <%= f.text_field :accommodation_cost, :class => "form-field", :placeholder => "Cost", :style => "color:black;" %><br>
+
+        <h4>Transportation Information</h4>
+        <%= f.text_field :transportation_type, :class => "form-field", :placeholder => "Type (Flight/Train/Drive)", :style => "color:black;" %><br>
+        <%= f.text_field :transportation_company_number, :class => "form-field", :placeholder => "Company & number (e.g., UA 1005)", :style => "color:black;" %><br>
+        <%= f.text_field :transportation_departure_location, :class => "form-field", :placeholder => "Departure Airport/Station", :style => "color:black;" %><br>
+        <%= f.text_field :transportation_departure_datetime, :class => "form-field", :placeholder => "Departure Date & Time", :style => "color:black;" %><br>
+        <%= f.text_field :transportation_arrival_location, :class => "form-field", :placeholder => "Arrival Airport/Station", :style => "color:black;" %><br>
+        <%= f.text_field :transportation_arrival_datetime, :class => "form-field", :placeholder => "Arrival Date & Time", :style => "color:black;" %><br>
+        <%= f.text_field :transportation_cost, :class => "form-field", :placeholder => "Cost", :style => "color:black;" %><br>
+        <%= f.submit "Submit Details", :id => "login-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>

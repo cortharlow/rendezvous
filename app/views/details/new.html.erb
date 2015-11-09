@@ -17,7 +17,7 @@
 <div id="detail-wrap">
   <div id="user-container" style="margin-top:10px;">
     <div id="user-new">Travel Details</div>
-    <div id="video-caption" style="margin-top:-10px;margin-bottom:30px;">Please add the following for a thorough itinerary:</div>
+    <div id="video-caption" style="margin-top:-10px;margin-bottom:20px;">Please add the following for a thorough itinerary:</div>
     <div id="user-form">
       <%= form_for :detail, url: destination_details_path do |f| %>
         <h4>Accommodation Information</h4>
@@ -26,7 +26,6 @@
         <%= f.text_field :accommodation_checkin, :class => "form-field", :placeholder => "Checkin Date & Time", :style => "color:black;" %><br>
         <%= f.text_field :accommodation_checkout, :class => "form-field", :placeholder => "Checkout Date & Time", :style => "color:black;" %><br>
         <%= f.text_field :accommodation_cost, :class => "form-field", :placeholder => "Cost", :style => "color:black;" %><br>
-        <%= f.text_field :accommodation_notes, :class => "form-field", :placeholder => "Notes", :style => "color:black;" %><br>
 
         <h4>Transportation Information</h4>
         <%= f.text_field :transportation_type, :class => "form-field", :placeholder => "Type (Flight/Train/Drive)", :style => "color:black;" %><br>

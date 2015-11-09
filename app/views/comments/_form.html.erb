@@ -1,13 +1,11 @@
-<h3>Post a Comment</h3>
 
+
+<div id="user-form" style="display:inline; text-align:center; margin-top:0;">
 <%= form_for [ @itinerary, @comment ] do |f| %>
+    <h3>Add a Comment:</h3>
+    <%= f.text_field :author_name, :class => "form-field", :placeholder => "First \& Last", :style => "color:black;" %><br>
+    <%= f.text_area :body, :class => "form-field", :placeholder => "Comment", :style => "color:black;" %><br>
+    <%= f.submit "Submit", :id => "login-btn" %>
 
-  <p>  <%= f.label :author_name, "Your Name:"%>
-    <%= f.text_field :author_name %>
-<br>
-    <%= f.label :body, "Comment:" %>
-    <%= f.text_area :body %>
-<br>
-    <%= f.submit "Submit" %>
-  </p>
 <% end %>
+</div>
