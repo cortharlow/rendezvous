@@ -579,3 +579,25 @@ video {
   color: #3472f7;
   font-family: 'Muli', sans-serif;
 }
+
+/*** Blue Profile ***/
+
+#blue {
+  position: fixed;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  background-image: url('https://a2.muscache.com/locations/uploads/neighborhood/hero/758/0_4200_0_1826_hero_Inwood_Tam_03.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index:-9999;
+}
+
+#profile-container {
+  margin: 0;
+  width: 100%;
+  position: absolute;
+}

@@ -1,20 +1,45 @@
-<h1>USER PROFILE</h1>
-<%= link_to "Rendezvous (Home)", itineraries_path %> |
-<%= link_to "Create Rendezvous", new_itinerary_path %> |
-<%= link_to "Logout", "/logout" %>
-<h2>My Information</h2>
-<p><img src="<%= @user.photo_url %>"> <%= @user.name %>
-  <br><%= @user.city %>
-  <br><%= link_to "Edit", edit_user_path %></p>
+<%= stylesheet_link_tag "style.css" %>
 
-
-<h2>My Rendezvous</h2>
-<% @user.itineraries.each do |itinerary| %>
-  <div class="itinerary_list" style="border:1px solid black;">
-    <h4><%= link_to itinerary.name, itinerary_path(itinerary) %><h4>
-      <img src="<%= itinerary.photo_url %>">
-        <p><b><%= itinerary.start_date %> to <%= itinerary.end_date %></b></p>
-        <p><%= itinerary.description %></p>
-        <p><%= link_to "Edit", edit_itinerary_path(itinerary) %> | <%= link_to "Destroy", itinerary_path(itinerary), method: :delete, data: {confirm: "Are you sure?"} %>
+  <div id="nav-bar">
+    <div id="home">
+      <ul>
+        <li><%= link_to "R", itineraries_path %></li>
+      </ul>
+    </div>
+    <div id="nav-basic">
+      <ul>
+        <li><%= link_to "#{current_user.name}\'s Profile", user_path(current_user.id) %></li>
+        <li><%= link_to "Create New", new_itinerary_path %></li>
+      </ul>
+    </div>
   </div>
-<% end %>
+
+<div id="blue">
+  <div id="user-container">
+    <div id="user-new"><%= @user.name %></div>
+    <div id="video-caption"><%= @user.city %></div>
+    <%= button_to "Edit Profile", edit_user_path, method: "get", :id => "login-btn", style: "margin-left:125px" %>
+
+    <div id="user-new" style="margin-top:40px;">My Rendezvous</div>
+    <div id="profile-container" style="width:50%; margin-top:0px; margin-right: 25%;">
+      <div class="itinerary-list" style="width:300px;margin-right:350px;">
+      <% @user.itineraries.each do |itinerary| %>
+      <div class="single-itinerary">
+        <h4><%= link_to itinerary.name, itinerary_path(itinerary) %></h4>
+        <% if itinerary.photo_url != "" %>
+          <img src='<%= itinerary.photo_url %>' style="width:300px;height:60px;border:0px;">
+        <% end %>
+        <h5><%= itinerary.start_date %> to <%= itinerary.end_date %></h5>
+        <h5 style="text-align:left;">Description:</h5>
+          <p><%= itinerary.description %></p>
+          <br>
+          <br>
+        <p>Created by: <%= itinerary.user.name %></p>
+        <p>Comments (<%= itinerary.comments.size %>)</p>
+        <p><%= link_to "Edit", edit_itinerary_path(itinerary), :style => "color:#2c93ff;" %> | <%= link_to "Destroy", itinerary_path(itinerary), method: :delete, data: {confirm: "Are you sure?"}, :style => "color:#ff3b30" %>
+        </div>
+    <% end %>
+    </div>
+  </div>
+  </div>
+</div>
