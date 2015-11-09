@@ -1,21 +1,55 @@
-<h1>Public Itinerary List</h1>
-<%= link_to "Create Rendezvous", new_itinerary_path %>
-<%= link_to "#{current_user.name}", "users/#{current_user.id}" %>
+<%= stylesheet_link_tag "style.css" %>
+
+<div id="nav-bar">
+  <div id="home">
+    <ul>
+      <li><%= link_to "R", itineraries_path %></li>
+    </ul>
+  </div>
+  <div id="nav-basic">
+    <ul>
+      <li><%= link_to "#{current_user.name}\'s Profile", "users/#{current_user.id}" %></li>
+      <li><%= link_to "Create New", new_itinerary_path %></li>
+    </ul>
+  </div>
+</div>
 
 <video autoplay loop>
   <source src="https://a0.muscache.com/airbnb/static/Seoul-P1-4.webm" type="video/webm">
   <source src="https://a0.muscache.com/airbnb/static/Seoul-P1-4.mp4" type="video/mp4">
 </video>
 
-<% @itineraries.each do |itinerary| %>
-<% if itinerary.public %>
-  <div class="single_itinerary" style="border:1px solid black;">
-    <h4><%= link_to itinerary.name, itinerary_path(itinerary) %></h4>
-    <img src='<%= itinerary.photo_url %>'>
-    <p><b><%= itinerary.start_date %> to <%= itinerary.end_date %></b></p>
-    <p><%= itinerary.description %></p>
-    <p>Created by: <%= itinerary.user.name %></p>
-    <p>Comments (<%= itinerary.comments.size %>)</p>
+<div id="video-header-container">
+  <div id="video-header">Rendezvous</div>
+  <div id="video-caption">Streamline your adventure through community.</div>
+  <%= button_to "Plan Now", new_itinerary_path, method: "get", :id => "video-btn" %>
+</div>
+
+
+
+
+<div id="itinerary-container">
+
+  <div class="info">
+    <h2>Find your inspiration</h2>
+    <p>Discover other trips made by people like you.</p>
   </div>
+
+  <div class="itinerary-list">
+  <% @itineraries.each do |itinerary| %>
+    <% if itinerary.public %>
+    <div class="single-itinerary">
+      <h4><%= link_to itinerary.name, itinerary_path(itinerary) %></h4>
+      <% if itinerary.photo_url != "" %>
+        <img src='<%= itinerary.photo_url %>' style="width:300px;height:60px;border:0px;">
+      <% end %>
+      <h5><%= itinerary.start_date %> to <%= itinerary.end_date %></h5>
+      <h5 style="text-align:left;">Description:</h5>
+        <p><%= itinerary.description %></p>
+      <p>Created by: <%= itinerary.user.name %></p>
+      <p>Comments (<%= itinerary.comments.size %>)</p>
+    </div>
+    <% end %>
   <% end %>
-<% end %>
+  </div>
+</div>

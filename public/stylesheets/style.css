@@ -15,6 +15,17 @@ Green: #05ae0e
 Yellow: #ff9500
 Red: #ff3b30
 
+Background Grey: #edefed
+Text Grey: #565a5c
+
+/*** REMOVE BROWSER DEFAULTS ***/
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #edefed;
+}
+
 /******** LANDING PAGE *********/
 
 #landing-container {
@@ -72,6 +83,10 @@ Red: #ff3b30
   color: white;
   margin: 20px 20px 0px 20px;
   border: 0px solid black;
+}
+
+.landing-btn:hover {
+  background-color: #3472f7;
 }
 
 /******* New, Edit, and Login User ********/
@@ -154,6 +169,9 @@ Red: #ff3b30
   border: 0px solid black;
 }
 
+#login-btn:hover {
+  background-color: #3472f7;
+}
 
 .form-field {
   margin-bottom: 5px;
@@ -180,14 +198,169 @@ Red: #ff3b30
   border: 0px solid black;
 }
 
+.submit-btn:hover {
+  background-color: #3472f7;
+}
+
+/*** Navigation Bar -- Appears on many pages ***/
+
+#nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}
+
+#nav-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+#home li {
+  font-family:'Sansita One', cursive;
+  font-size: 50px;
+  line-height: 20px;
+  margin-left: -20px;
+  float: left;
+}
+
+#nav-basic li {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  display: inline;
+  float: right;
+}
+
+/*** Itinerary List and Home Page ***/
+
 video {
   margin-top: -225px;
   position: fixed;
   top: 50%;
   left: 50%;
-  min-width: 100%;
+  min-width: 90%;
   min-height: 100%;
   width: auto;
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
 }
+
+#video-header-container {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 170px;
+  text-align: center;
+  position: absolute;
+}
+
+#video-header {
+  margin: auto;
+  font-family: 'Sansita One', cursive;
+  font-size: 100px;
+  color: white;
+}
+
+#video-caption {
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+#video-btn {
+  margin: auto;
+  width: 200px;
+  background-color: #2c93ff;
+  border-radius: 5px;
+  line-height: 35px;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  margin-top: 100px;
+  border: 0px solid black;
+}
+
+#video-btn:hover {
+  background-color: #3472f7;
+}
+
+
+#itinerary-container {
+  margin: 0;
+  margin-top: 550px;
+  width: 100%;
+  position: absolute;
+  background-color: #edefed;
+}
+
+.info {
+  margin: auto;
+  width: 600px;
+  color: #565a5c;
+  text-align: center;
+}
+
+.info h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+
+.info p {
+  font-family: 'Muli', sans-serif;
+  margin-bottom: 40px;
+}
+
+.itinerary-list {
+  margin: auto;
+  width: 664px;
+}
+
+.single-itinerary {
+  width: 300px;
+  height: 250px;
+  margin: 10px;
+  background-color: white;
+  border: 5px solid #2c93ff;
+  display: inline-table;
+}
+
+.single-itinerary:hover {
+  border-color: #3472f7;
+}
+
+.single-itinerary h4 {
+  font-family: 'Sansita One', cursive;
+  font-size: 20px;
+  margin: 5px 0 5px 0;
+  text-align: center;
+}
+
+.single-itinerary a {
+  text-decoration: none;
+  color: black;
+}
+
+.single-itinerary h5 {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  margin: 5px 0 5px 0;
+  text-align: center;
+}
+
+.single-itinerary p {
+  font-family: 'Muli', sans-serif;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/**Streamline your trip planning process through community.*/
