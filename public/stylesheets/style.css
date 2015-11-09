@@ -396,3 +396,18 @@ video {
   background-repeat: no-repeat;
   /*z-index:-9999;*/
 }
+
+/*** New and Edit Activities Form ***/
+
+#activity-wrap {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url('https://a0.muscache.com/locations/uploads/photo/image/3034/0_4200_0_2800_one_CanalStMartin_Knight_001.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

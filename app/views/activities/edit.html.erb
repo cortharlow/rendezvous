@@ -1,12 +1,32 @@
-<h2>Edit Activity</h2>
 
-<%= form_for @activity do |f| %>
-  Lets add an activity!<br>
-  Move to another day: <%= f.text_field :day_num %><br>
-  Name of Activity: <%= f.text_field :name %><br>
-  Location: <%= f.text_field :location %><br>
-  Cost: <%= f.text_field :cost %><br>
-  Photo URL: <%= f.text_field :photo_url %><br>
-  Notes: <%= f.text_area :notes %><br>
-  <%= f.submit "Submit Activity" %>
-<% end %>
+<%= stylesheet_link_tag "style.css" %>
+
+<div id="nav-bar">
+  <div id="home">
+    <ul>
+      <li><%= link_to "R", itineraries_path %></li>
+    </ul>
+  </div>
+  <div id="nav-basic">
+    <ul>
+      <li><%= link_to "#{current_user.name}\'s Profile", user_path(current_user.id) %></li>
+      <li><%= link_to "Create New", new_itinerary_path %></li>
+    </ul>
+  </div>
+</div>
+
+<div id="activity-wrap">
+  <div id="user-container">
+    <div id="user-new">Edit Activity</div>
+    <div id="user-form">
+      <%= form_for @activity do |f| %>
+        <%= f.hidden_field :day_num, value: params[:day_num] %>
+        <%= f.text_field :name, :class => "form-field", :placeholder => "Name of Activity", :style => "color:black;" %><br>
+        <%= f.text_field :location, :class => "form-field", :placeholder => "Location", :style => "color:black;" %><br>
+        <%= f.text_field :cost, :class => "form-field", :placeholder => "Cost", :style => "color:black;" %><br>
+        <%= f.text_field :notes, :class => "form-field", :placeholder => "Notes", :style => "color:black;" %><br>
+        <%= f.submit "Save", :id => "login-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
