@@ -179,3 +179,15 @@ Red: #ff3b30
   margin-left: 6px;
   border: 0px solid black;
 }
+
+video {
+  margin-top: -225px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+}
