@@ -1,9 +1,30 @@
-<h2>Edit Destination</h2>
 
-<%= form_for @destination, url: destination_path do |f| %>
-  Where are you traveling?<br>
-  City: <%= f.text_field :city %><br>
-  Country: <%= f.text_field :country %><br>
-  Number of Days: <%= f.text_field :num_of_days %><br>
-  <%= f.submit "Edit Destination" %>
-<% end %>
+<%= stylesheet_link_tag "style.css" %>
+
+<div id="nav-bar">
+  <div id="home">
+    <ul>
+      <li><%= link_to "R", itineraries_path %></li>
+    </ul>
+  </div>
+  <div id="nav-basic">
+    <ul>
+      <li><%= link_to "#{current_user.name}\'s Profile", user_path(current_user.id) %></li>
+      <li><%= link_to "Create New", new_itinerary_path %></li>
+    </ul>
+  </div>
+</div>
+
+<div id="destination-wrap">
+  <div id="user-container">
+    <div id="user-new">Edit Destination</div>
+    <div id="user-form">
+      <%= form_for @destination, url: destination_path do |f| %>
+      <%= f.text_field :city, :class => "form-field", :placeholder => "City", :style => "color:black;" %><br>
+      <%= f.text_field :country, :class => "form-field", :placeholder => "Country", :style => "color:black;" %><br>
+      <%= f.text_field :num_of_days, :class => "form-field", :placeholder => "Number of Days", :style => "color:black;" %><br>
+      <%= f.submit "Edit Destination", :id => "login-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
