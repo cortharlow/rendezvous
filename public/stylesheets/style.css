@@ -583,7 +583,20 @@ video {
 /*** Blue Profile ***/
 
 #blue {
-  position: fixed;
+  position: absolute;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  background-color: #2c93ff;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#profile-background {
+  position: absolute;
   min-height: 100%;
   min-width: 1024px;
   width: 100%;
