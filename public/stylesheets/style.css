@@ -249,11 +249,11 @@ html, body {
 /*** Itinerary List and Home Page ***/
 
 video {
-  margin-top: -225px;
+  margin-top: -210px;
   position: fixed;
   top: 50%;
   left: 50%;
-  min-width: 90%;
+  min-width: 100%;
   min-height: 100%;
   width: auto;
   z-index: -100;
