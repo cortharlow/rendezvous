@@ -60,6 +60,8 @@ Once logged in and authenticated:
 
 Like most travel websites, I wanted to use a variety of images focused on cities to inspire users to use their imaginations. To make things even more dynamic, the Home screen (after logging in/signing up) features a video header, as does the itinerary header. When viewing itineraries, Destinations/Activities/Accommodations/Transportation are kept separate by strong dividing lines, but framed together by these same lines. 
 
+Additionally, many of my peers in class began using Bootstrap to make their forms. I decided that I wanted the practice of styling forms and erb tags, and tried my best to make them similar to Bootstrap.
+
 ### Wireframes
 ![Wireframes](http://i.imgur.com/4lx9Y7E.jpg?1)
 
