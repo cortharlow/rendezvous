@@ -76,7 +76,7 @@ Additionally, many of my peers in class began using Bootstrap to make their form
 ![Profile](http://i.imgur.com/XKBtawy.jpg)
 ---
 
-####Copyright notice:
+####Copyright Notice
 
 The media and information used in this app is for educational purposes.
 
