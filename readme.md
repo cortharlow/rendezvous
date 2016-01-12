@@ -64,10 +64,10 @@ The most important part of an itinerary creator is, of course the itinerary. I s
 Additionally, many of my peers in class began using [Bootstrap](http://getbootstrap.com/) (an immensely popular front-end framework), due in large part its ease in making beautiful forms. I decided that I wanted the practice of styling forms and erb tags by hand, and tried my best to make them similar to Bootstrap -- I think I did a pretty good job.
 
 
-### Wireframes
+#### Wireframes
 ![Wireframes](http://i.imgur.com/4lx9Y7E.jpg?1)
 
-### Screenshots
+#### Screenshots
 ![Splash](http://i.imgur.com/UDPs111.jpg)
 ![Signup](http://i.imgur.com/DdvOdfe.jpg)
 ![Home](http://i.imgur.com/BNsE382.png)
@@ -79,6 +79,17 @@ Additionally, many of my peers in class began using [Bootstrap](http://getbootst
 
 ### Retrospective 
 
+This was the first Ruby on Rails app I have ever built, and with this in mind, I am incredibly happy with the way Rendezvous turned out. If I had to start over from scratch, I would've changed only a few things:
+  - Rendezvous is extremely dependent on user input via forms
+    - Removing some froms and using an API(s) to gather some of the necessary information would be incredibly beneficial; if flight itineraries and hotel reservation information could be immediately inputed, that would be amazing
+    - Lessen the amount of information that is required when initially setting up an itinerary; this sometimes resulted in a itinerary of multiple days with nothing in them, which looks less than appealing
+  - Expanding the Splash screen to include more information on who Rendezvous is for and what Rendezvous does; as it stands, there are simply buttons to login and signup
+  - Find a way to allow a user to implement some photos
+    - Would want to do user testing user to see if this is even a desired feature
+  - DO USER TESTING
+    - A five day timeline didn't allow for much external input outside of programming questions; would love the opportunity to get feedback throughout the design process
+
+Thankfully, some of these issues can be easily remedied by spending some additional time on the app.
 
 ---
 
