@@ -10,9 +10,7 @@ Every first weekend of October since our freshman year of college,
 five of my closest friends and I select a random city to meetup in and have fun together for a nice break from the routine.
 However, trying to create travel plans with a group of people is incredibly tedious -- flights, accommodations, activities must all be accounted for and discussed. Even with my friends, planning our weekend trips could be unbearable at times, especially when trying to coordinate via a Google Doc.
 
-Enter Rendezvous.
-
-I created Rendezvous as a supplement to Airbnb/flight trackers/note taking in order to have a cleaner, easier to understand travel itinerary that has the added benefit of being shareable via the internet. Ideally, a user and his travel companions could signup and create an itinerary all together. They could each add activities, suggest accommodations, leave comments, and easily come up with an itinerary everyone can be excited about. 
+I created Rendezvous as a supplement to Airbnb/flight trackers/note taking in order to have a cleaner, easier to understand travel itinerary that has the added benefit of being shareable via the Internet. Ideally, a user and his travel companions could signup and create an itinerary all together. They could each add activities, suggest accommodations, leave comments, and easily come up with an itinerary everyone can be excited about.
 
 ---
 
@@ -59,9 +57,12 @@ Once logged in and authenticated:
 
 ### Styling
 
-Like most travel websites, I wanted to use a variety of images focused on cities to inspire users to use their imaginations. To make things even more dynamic, the Home screen (after logging in/signing up) features a video header, as does the itinerary header. When viewing itineraries, Destinations/Activities/Accommodations/Transportation are kept separate by strong dividing lines, but framed together by these same lines. 
+Like most travel websites, I wanted to use a variety of images focused on cities to inspire users to use their imaginations when making travel plans. When researching different CSS abilities, I stumbled across video tags! I knew I had to find a way to implement a video as either a header or background if nothing more than to flex some CSS muscle. The Home screen (after logging in/signing up) features a video header, as does the itinerary header. 
 
-Additionally, many of my peers in class began using Bootstrap to make their forms. I decided that I wanted the practice of styling forms and erb tags, and tried my best to make them similar to Bootstrap.
+The most important part of an itinerary creator is, of course the itinerary. I struggled a long time with the best way to group all the various parts of a trip. Ultimately, I created a sort of hierarchy; Activities within Days, Days/Accommodations/Travel Plans within Destinations/Cities, and Destinations/Cities within the Itinerary. All of the sections are contained within nested borders to give the user a visual reminder of this hierarchy.
+
+Additionally, many of my peers in class began using [Bootstrap](http://getbootstrap.com/) (an immensely popular front-end framework), due in large part its ease in making beautiful forms. I decided that I wanted the practice of styling forms and erb tags by hand, and tried my best to make them similar to Bootstrap -- I think I did a pretty good job.
+
 
 ### Wireframes
 ![Wireframes](http://i.imgur.com/4lx9Y7E.jpg?1)
