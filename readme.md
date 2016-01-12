@@ -1,7 +1,7 @@
 #Rendezvous 
 
 ![Splash](http://i.imgur.com/UDPs111.jpg)
-[Demo](https://fast-reaches-6377.herokuapp.com/)
+[Try it out here!](https://fast-reaches-6377.herokuapp.com/)
 
 ---
 ### Overview
