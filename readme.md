@@ -77,6 +77,11 @@ Additionally, many of my peers in class began using [Bootstrap](http://getbootst
 ![Profile](http://i.imgur.com/XKBtawy.jpg)
 ---
 
+### Retrospective 
+
+
+---
+
 ####Copyright Notice
 
 The media and information used in this app is for educational purposes.
